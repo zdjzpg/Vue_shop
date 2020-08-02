@@ -8,10 +8,14 @@
 
 <script>
   import FooterGuide from './components/FooterGuide/FooterGuide'
+  import { reqAddress, reqFoodTypes } from './api';
   export default {
     data () {
       return {
       };
+    },
+    mounted() {
+      this.$store.dispatch("getAddress")
     },
     components:{
       FooterGuide
