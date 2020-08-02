@@ -1,7 +1,7 @@
 <template>
   <section class="msite">
     <!--首页头部-->
-    <HeaderTop title="昌平区北七家宏福科技园(337省道北)">
+    <HeaderTop :title='address.title'>
       <span class="header_search" slot="left">
         <i class="iconfont icon-sousuo"></i>
       </span>
@@ -135,6 +135,7 @@ import HeaderTop from "../../components/HeaderTop/HeaderTop.vue";
 import ShopList from "../../components/ShopList/ShopList.vue";
 import Swiper from 'swiper/bundle'
 import 'swiper/swiper-bundle.css';
+import {mapState} from 'vuex'
 
 export default {
   mounted() {
@@ -150,8 +151,10 @@ export default {
       hideOnClick :true,//显示/隐藏分页器:默认显示false，true隐藏
       clickable :true,//点击切换分页器
     },
- 
   })
+  },
+  computed: {
+      ...mapState(['address'])//添加一个计算属性address(vuex里的address)
   },
   components: {
     HeaderTop,
