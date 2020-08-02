@@ -3,6 +3,5 @@ import {RECEIVE_ADDRESS} from "./mutations-type"
 export default{
   [RECEIVE_ADDRESS] (state, {address}) {
       state.address = address
-    },
-    
+    }, 
 }
